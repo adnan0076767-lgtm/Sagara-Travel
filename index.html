@@ -1,0 +1,1167 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090909">
+
+  <title>SAGARA TRAVEL | Luxury Journeys, Unforgettable Memories</title>
+  <meta name="description" content="SAGARA TRAVEL menghadirkan pengalaman perjalanan dan paket wisata pilihan dengan pelayanan personal. Temukan perjalanan impian Anda bersama kami di Jakarta Selatan.">
+  <meta name="keywords" content="Sagara Travel, travel Jakarta Selatan, paket wisata Indonesia, private trip, wisata premium, jasa travel">
+  <meta name="author" content="SAGARA TRAVEL">
+  <meta name="robots" content="index, follow">
+
+  <!-- Ganti URL canonical setelah alamat GitHub Pages diketahui -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="SAGARA TRAVEL">
+  <meta property="og:title" content="SAGARA TRAVEL | Discover the Extraordinary">
+  <meta property="og:description" content="Perjalanan istimewa dimulai di sini. Jelajahi destinasi pilihan bersama SAGARA TRAVEL.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1530789253388-582c481c54b0?auto=format&fit=crop&w=1200&h=630&q=85">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SAGARA TRAVEL | Luxury Journeys">
+  <meta name="twitter:description" content="Discover extraordinary destinations with SAGARA TRAVEL.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1530789253388-582c481c54b0?auto=format&fit=crop&w=1200&h=630&q=85">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #090909;
+      --panel: #111110;
+      --panel2: #171715;
+      --gold: #c7a56a;
+      --gold-light: #e7d2a3;
+      --text: #f5f0e6;
+      --muted: #aaa69d;
+      --line: rgba(199,165,106,.23);
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'DM Sans', Arial, sans-serif;
+      --radius: 5px;
+      --container: 1180px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    body, button, input, select, textarea { font-family: var(--sans); }
+
+    a { color: inherit; text-decoration: none; }
+    button { cursor: pointer; }
+    img { max-width: 100%; display: block; }
+    ::selection { background: var(--gold); color: #090909; }
+
+    .container {
+      width: min(var(--container), 90%);
+      margin-inline: auto;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 30px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .section { padding: 105px 0; }
+
+    .section-heading {
+      max-width: 650px;
+      margin-bottom: 42px;
+    }
+
+    .section-heading h2 {
+      font-family: var(--serif);
+      font-size: clamp(32px, 4.5vw, 52px);
+      line-height: 1.2;
+      font-weight: 400;
+      margin: 17px 0;
+    }
+
+    .section-heading p { color: var(--muted); font-size: 14px; }
+
+    .gold { color: var(--gold); }
+    .muted { color: var(--muted); }
+
+    .btn {
+      min-height: 49px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 13px 23px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      border: 1px solid var(--gold);
+      transition: .25s ease;
+    }
+
+    .btn-gold { background: var(--gold); color: #111; }
+    .btn-gold:hover { background: var(--gold-light); border-color: var(--gold-light); }
+    .btn-outline { color: var(--gold-light); background: transparent; }
+    .btn-outline:hover { background: var(--gold); color: #111; }
+
+    .btn-small { min-height: 40px; padding: 9px 15px; font-size: 10px; }
+
+    /* NAVIGATION */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      height: 82px;
+      background: rgba(9,9,9,.91);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255,255,255,.07);
+    }
+
+    .nav-inner {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+
+    .brand-mark {
+      width: 43px;
+      height: 43px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-family: var(--serif);
+      font-size: 25px;
+      transform: rotate(45deg);
+    }
+
+    .brand-mark span { transform: rotate(-45deg); }
+
+    .brand-name { font-family: var(--serif); font-size: 20px; letter-spacing: 3px; }
+    .brand-sub { display: block; font-size: 8px; color: var(--gold); letter-spacing: 2.4px; margin-top: -3px; }
+
+    .nav-links { display: flex; align-items: center; gap: 28px; }
+    .nav-links a:not(.btn) { font-size: 11px; color: #d4d0c8; transition: color .2s; }
+    .nav-links a:not(.btn):hover { color: var(--gold); }
+
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      color: var(--gold);
+      border: 1px solid var(--line);
+      padding: 7px 12px;
+      font-size: 22px;
+    }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      min-height: 760px;
+      min-height: min(850px, 100svh);
+      display: flex;
+      align-items: center;
+      padding: 145px 0 85px;
+      background:
+        linear-gradient(90deg, rgba(5,5,5,.94) 0%, rgba(5,5,5,.72) 46%, rgba(5,5,5,.18) 100%),
+        linear-gradient(0deg, #090909 0%, transparent 32%),
+        url("https://images.unsplash.com/photo-1530789253388-582c481c54b0?auto=format&fit=crop&w=2000&q=90") center/cover no-repeat;
+    }
+
+    .hero-content { max-width: 720px; position: relative; z-index: 1; }
+
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(45px, 7.5vw, 88px);
+      font-weight: 400;
+      line-height: 1.12;
+      letter-spacing: -1.8px;
+      margin: 27px 0;
+    }
+
+    .hero h1 em { color: var(--gold-light); font-weight: 400; }
+
+    .hero p { color: #d0ccc3; max-width: 490px; font-size: 14px; line-height: 2; }
+
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 33px; }
+
+    .hero-note {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      margin-top: 50px;
+      color: #c8c3b9;
+      font-size: 10px;
+      letter-spacing: 1.4px;
+    }
+
+    .hero-note::before { content: ""; height: 1px; width: 48px; background: var(--gold); }
+
+    .hero-index {
+      position: absolute;
+      bottom: 90px;
+      right: 5%;
+      color: rgba(255,255,255,.75);
+      font-size: 10px;
+      letter-spacing: 3px;
+      writing-mode: vertical-rl;
+    }
+
+    /* INTRO STRIP */
+    .trust-strip {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: #0d0d0c;
+    }
+
+    .trust-inner {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      padding: 26px 0;
+      gap: 20px;
+    }
+
+    .trust-item { text-align: center; padding: 4px 10px; }
+    .trust-item strong { display: block; color: var(--gold-light); font-family: var(--serif); font-size: 18px; font-weight: 400; }
+    .trust-item span { color: var(--muted); font-size: 10px; letter-spacing: 1px; }
+
+    /* DESTINATIONS */
+    .destination-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 20px;
+    }
+
+    .destination-card {
+      position: relative;
+      height: 390px;
+      overflow: hidden;
+      background: var(--panel2);
+      border: 1px solid rgba(255,255,255,.07);
+    }
+
+    .destination-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .7s ease;
+    }
+
+    .destination-card:hover img { transform: scale(1.07); }
+
+    .destination-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(0,0,0,.94), transparent 70%);
+      pointer-events: none;
+    }
+
+    .destination-info { position: absolute; z-index: 1; bottom: 24px; left: 24px; right: 24px; }
+    .destination-info span { color: var(--gold-light); font-size: 9px; letter-spacing: 2px; text-transform: uppercase; }
+    .destination-info h3 { font-family: var(--serif); font-size: 29px; font-weight: 400; margin: 5px 0; }
+    .destination-info p { color: #c9c5bd; font-size: 11px; }
+
+    /* PACKAGES */
+    .packages-section { background: #0d0d0c; border-block: 1px solid rgba(255,255,255,.05); }
+
+    .package-toolbar { display: flex; gap: 9px; flex-wrap: wrap; margin-bottom: 30px; }
+
+    .filter-btn {
+      background: transparent;
+      color: var(--muted);
+      border: 1px solid #35332d;
+      padding: 10px 16px;
+      font-size: 10px;
+      letter-spacing: .5px;
+    }
+
+    .filter-btn.active, .filter-btn:hover { color: #111; background: var(--gold); border-color: var(--gold); }
+
+    .package-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+
+    .package-card {
+      background: #121211;
+      border: 1px solid rgba(199,165,106,.17);
+      transition: border-color .3s, transform .3s;
+    }
+
+    .package-card:hover { border-color: var(--gold); transform: translateY(-4px); }
+    .package-card[hidden] { display: none; }
+
+    .package-image { height: 220px; overflow: hidden; position: relative; }
+    .package-image img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s; }
+    .package-card:hover .package-image img { transform: scale(1.05); }
+
+    .package-tag {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      background: rgba(9,9,9,.88);
+      border: 1px solid var(--line);
+      color: var(--gold-light);
+      font-size: 9px;
+      letter-spacing: 1px;
+      padding: 6px 10px;
+      text-transform: uppercase;
+    }
+
+    .package-body { padding: 23px; }
+    .package-location { font-size: 10px; color: var(--gold); letter-spacing: 1.5px; text-transform: uppercase; }
+    .package-body h3 { font-family: var(--serif); font-weight: 400; font-size: 24px; margin: 8px 0; }
+    .package-body p { color: var(--muted); font-size: 12px; min-height: 60px; }
+    .package-meta { display: flex; gap: 15px; flex-wrap: wrap; color: #d1ccc2; font-size: 10px; margin: 18px 0; }
+    .package-meta span::before { content: "✦ "; color: var(--gold); }
+
+    .package-bottom {
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .price-label { font-size: 9px; color: var(--muted); display: block; }
+    .price { font-family: var(--serif); font-size: 21px; color: var(--gold-light); white-space: nowrap; }
+
+    /* ABOUT */
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 70px; }
+
+    .about-visual { position: relative; padding: 0 25px 25px 0; }
+
+    .about-visual img { width: 100%; height: 510px; object-fit: cover; }
+
+    .about-frame {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 55%;
+      height: 55%;
+      border-right: 1px solid var(--gold);
+      border-bottom: 1px solid var(--gold);
+      pointer-events: none;
+    }
+
+    .about-copy h2 { font-family: var(--serif); font-size: clamp(34px,4vw,49px); font-weight: 400; line-height: 1.3; margin: 20px 0; }
+    .about-copy p { color: var(--muted); font-size: 13px; margin-bottom: 18px; }
+
+    .about-points { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 27px 0 32px; }
+    .about-point { border-left: 1px solid var(--gold); padding-left: 14px; }
+    .about-point strong { display: block; color: var(--gold-light); font-family: var(--serif); font-size: 18px; font-weight: 400; }
+    .about-point span { font-size: 10px; color: var(--muted); }
+
+    /* EXPERIENCE */
+    .experience {
+      position: relative;
+      text-align: center;
+      padding: 95px 0;
+      background:
+        linear-gradient(rgba(8,8,8,.82),rgba(8,8,8,.91)),
+        url("https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=1800&q=85") center/cover;
+    }
+
+    .experience h2 { font-family: var(--serif); font-size: clamp(34px,5vw,57px); font-weight: 400; margin: 18px auto; max-width: 800px; line-height: 1.25; }
+    .experience p { color: #d0ccc3; font-size: 13px; max-width: 560px; margin: 0 auto 28px; }
+
+    /* BOOKING */
+    .booking-section { background: #10100f; border-top: 1px solid var(--line); }
+
+    .booking-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 65px; align-items: start; }
+
+    .booking-copy h2 { font-family: var(--serif); font-size: 43px; font-weight: 400; line-height: 1.25; margin: 20px 0; }
+    .booking-copy p { color: var(--muted); font-size: 13px; margin-bottom: 28px; }
+
+    .contact-line { padding: 17px 0; border-top: 1px solid var(--line); }
+    .contact-line small { color: var(--gold); display: block; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; }
+    .contact-line a, .contact-line span { font-size: 13px; overflow-wrap: anywhere; }
+
+    .booking-form {
+      border: 1px solid var(--line);
+      padding: clamp(22px,4vw,38px);
+      background: #0b0b0a;
+    }
+
+    .booking-form h3 { font-family: var(--serif); font-size: 27px; font-weight: 400; margin-bottom: 7px; }
+    .form-intro { color: var(--muted); font-size: 11px; margin-bottom: 25px; }
+
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 17px; }
+    .field { display: flex; flex-direction: column; gap: 7px; min-width: 0; }
+    .field.full { grid-column: 1 / -1; }
+
+    .field label { font-size: 10px; color: #ded8ca; letter-spacing: .5px; }
+
+    .field input, .field select, .field textarea {
+      width: 100%;
+      background: #151513;
+      color: var(--text);
+      border: 1px solid #343229;
+      border-radius: 0;
+      padding: 13px;
+      font-size: 12px;
+      outline: none;
+    }
+
+    .field input:focus, .field select:focus, .field textarea:focus { border-color: var(--gold); }
+    .field select option { background: #151513; }
+    .field textarea { min-height: 90px; resize: vertical; }
+
+    .form-submit { width: 100%; margin-top: 22px; }
+    .form-note { color: #8e8a81; font-size: 10px; margin-top: 12px; }
+
+    /* FOOTER */
+    .footer { padding: 55px 0 25px; background: #070707; border-top: 1px solid var(--line); }
+
+    .footer-top { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 40px; padding-bottom: 38px; }
+    .footer-brand p { color: var(--muted); font-size: 12px; max-width: 330px; margin-top: 18px; }
+    .footer-col h4 { font-size: 11px; letter-spacing: 1.5px; color: var(--gold); text-transform: uppercase; margin-bottom: 15px; }
+    .footer-col a, .footer-col p { display: block; color: var(--muted); font-size: 11px; margin: 8px 0; overflow-wrap: anywhere; }
+    .footer-col a:hover { color: var(--gold-light); }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.08);
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      color: #77736b;
+      font-size: 10px;
+    }
+
+    .back-top {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 500;
+      width: 43px;
+      height: 43px;
+      background: var(--gold);
+      color: #111;
+      border: none;
+      font-size: 19px;
+      display: grid;
+      place-items: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: .25s;
+    }
+
+    .back-top.visible { opacity: 1; pointer-events: auto; }
+
+    .reveal { animation: reveal .8s ease both; }
+    @keyframes reveal { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+
+    @media (max-width: 950px) {
+      .nav-links { gap: 16px; }
+      .nav-links a:not(.btn) { font-size: 10px; }
+      .destination-grid, .package-grid { grid-template-columns: repeat(2,1fr); }
+      .about-grid { gap: 35px; }
+      .booking-grid { gap: 30px; }
+    }
+
+    @media (max-width: 760px) {
+      .navbar { height: 72px; }
+      .brand-mark { width: 35px; height: 35px; font-size: 21px; }
+      .brand-name { font-size: 17px; letter-spacing: 2px; }
+      .brand-sub { font-size: 7px; letter-spacing: 1.6px; }
+      .menu-toggle { display: block; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 71px;
+        left: 0;
+        right: 0;
+        background: #0b0b0a;
+        border-bottom: 1px solid var(--line);
+        padding: 22px 5% 26px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 19px;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a:not(.btn) { font-size: 12px; }
+      .nav-links .btn { width: 100%; }
+      .hero { min-height: 730px; min-height: 90svh; padding-top: 130px; background-position: 57% center; }
+      .hero h1 { font-size: clamp(43px,11vw,68px); letter-spacing: -1px; }
+      .hero p { font-size: 13px; }
+      .hero-index { display: none; }
+      .section { padding: 75px 0; }
+      .trust-inner { grid-template-columns: 1fr; gap: 16px; }
+      .trust-item { border-bottom: 1px solid rgba(255,255,255,.06); padding-bottom: 14px; }
+      .trust-item:last-child { border-bottom: 0; padding-bottom: 0; }
+      .destination-grid, .package-grid { grid-template-columns: 1fr; }
+      .destination-card { height: 410px; }
+      .package-image { height: 240px; }
+      .about-grid, .booking-grid { grid-template-columns: 1fr; }
+      .about-visual img { height: 390px; }
+      .about-copy h2 { font-size: 38px; }
+      .booking-copy h2 { font-size: 38px; }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 28px; }
+      .footer-brand { grid-column: 1 / -1; }
+      .footer-bottom { flex-direction: column; }
+    }
+
+    @media (max-width: 420px) {
+      .container { width: 91%; }
+      .hero-actions { flex-direction: column; align-items: stretch; }
+      .hero-actions .btn { width: 100%; }
+      .hero h1 { font-size: 43px; }
+      .form-grid { grid-template-columns: 1fr; }
+      .field.full { grid-column: auto; }
+      .footer-top { grid-template-columns: 1fr; }
+      .footer-brand { grid-column: auto; }
+      .about-points { gap: 12px; }
+      .package-bottom { align-items: flex-start; }
+      .price { font-size: 18px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+
+<body>
+  <!--
+    SAGARA TRAVEL V1.0
+    Lokasi: Jakarta Selatan
+    Email: sagaratravel@gmail.com
+
+    SETELAH MENDAPAT NOMOR ADMIN:
+    Isi WHATSAPP_NUMBER di bagian SCRIPT dengan kode negara Indonesia.
+    Contoh format: 6281234567890 (tanpa +, spasi, atau tanda hubung).
+  -->
+
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a class="brand" href="#home" aria-label="SAGARA TRAVEL beranda">
+        <div class="brand-mark"><span>S</span></div>
+        <div>
+          <div class="brand-name">SAGARA</div>
+          <span class="brand-sub">TRAVEL & JOURNEYS</span>
+        </div>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Buka menu" aria-expanded="false">☰</button>
+
+      <nav class="nav-links" id="navLinks" aria-label="Navigasi utama">
+        <a href="#home">Beranda</a>
+        <a href="#destinasi">Destinasi</a>
+        <a href="#paket">Paket Wisata</a>
+        <a href="#tentang">Tentang Kami</a>
+        <a href="#kontak">Kontak</a>
+        <a href="#booking" class="btn btn-gold btn-small">Rencanakan Trip ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-content reveal">
+          <span class="eyebrow">Your Journey, Our Passion</span>
+          <h1>Discover the<br><em>Extraordinary.</em></h1>
+          <p>
+            Setiap perjalanan memiliki cerita. Temukan destinasi istimewa,
+            pengalaman berkesan, dan perjalanan yang dirancang untuk Anda
+            bersama SAGARA TRAVEL.
+          </p>
+          <div class="hero-actions">
+            <a href="#paket" class="btn btn-gold">Jelajahi Paket <span>↗</span></a>
+            <a href="#tentang" class="btn btn-outline">Kenali SAGARA</a>
+          </div>
+          <div class="hero-note">LUXURY JOURNEYS · UNFORGETTABLE MEMORIES</div>
+        </div>
+      </div>
+      <div class="hero-index">01 — THE JOURNEY BEGINS</div>
+    </section>
+
+    <!-- BRAND STRIP -->
+    <section class="trust-strip" aria-label="Keunggulan layanan">
+      <div class="container trust-inner">
+        <div class="trust-item">
+          <strong>Personal Journey</strong>
+          <span>Perjalanan sesuai kebutuhan Anda</span>
+        </div>
+        <div class="trust-item">
+          <strong>Curated Destinations</strong>
+          <span>Pilihan destinasi untuk dijelajahi</span>
+        </div>
+        <div class="trust-item">
+          <strong>Memorable Moments</strong>
+          <span>Ciptakan cerita perjalanan Anda</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- DESTINATIONS -->
+    <section class="section" id="destinasi">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">The World Awaits</span>
+          <h2>Destinasi yang <span class="gold">Memikat.</span></h2>
+          <p>
+            Dari pesona pulau tropis hingga lanskap alam yang menakjubkan,
+            temukan inspirasi untuk perjalanan Anda berikutnya.
+          </p>
+        </div>
+
+        <div class="destination-grid">
+          <a href="#paket" class="destination-card" aria-label="Lihat paket Bali">
+            <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=850&q=85"
+                 alt="Pemandangan tropis Bali" loading="lazy">
+            <div class="destination-info">
+              <span>Island Escape</span>
+              <h3>Bali</h3>
+              <p>Pesona tropis dan budaya yang memikat ↗</p>
+            </div>
+          </a>
+
+          <a href="#paket" class="destination-card" aria-label="Lihat paket Labuan Bajo">
+            <img src="https://images.unsplash.com/photo-1516690561799-46d8f74f9abf?auto=format&fit=crop&w=850&q=85"
+                 alt="Lanskap pulau dan laut Indonesia" loading="lazy">
+            <div class="destination-info">
+              <span>Ocean Adventure</span>
+              <h3>Labuan Bajo</h3>
+              <p>Keindahan laut dan pulau eksotis ↗</p>
+            </div>
+          </a>
+
+          <a href="#paket" class="destination-card" aria-label="Lihat paket Yogyakarta">
+            <img src="https://images.unsplash.com/photo-1596402184320-417e7178b2cd?auto=format&fit=crop&w=850&q=85"
+                 alt="Warisan budaya dan arsitektur Indonesia" loading="lazy">
+            <div class="destination-info">
+              <span>Culture & Heritage</span>
+              <h3>Yogyakarta</h3>
+              <p>Warisan budaya dan pesona Nusantara ↗</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PACKAGES -->
+    <section class="section packages-section" id="paket">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Exclusive Experiences</span>
+          <h2>Perjalanan Pilihan <span class="gold">Anda.</span></h2>
+          <p>
+            Temukan inspirasi perjalanan di bawah ini. Harga dan detail paket
+            merupakan contoh awal dan wajib dikonfirmasi sebelum pemesanan.
+          </p>
+        </div>
+
+        <div class="package-toolbar" role="group" aria-label="Filter paket wisata">
+          <button class="filter-btn active" data-filter="all" aria-pressed="true">Semua Paket</button>
+          <button class="filter-btn" data-filter="pantai" aria-pressed="false">Island & Beach</button>
+          <button class="filter-btn" data-filter="alam" aria-pressed="false">Nature Escape</button>
+          <button class="filter-btn" data-filter="budaya" aria-pressed="false">Culture Trip</button>
+        </div>
+
+        <div class="package-grid">
+          <article class="package-card" data-category="pantai">
+            <div class="package-image">
+              <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=850&q=85"
+                   alt="Liburan di Bali" loading="lazy">
+              <span class="package-tag">Island Escape</span>
+            </div>
+            <div class="package-body">
+              <div class="package-location">Bali, Indonesia</div>
+              <h3>Bali Serenity Escape</h3>
+              <p>Inspirasi liburan tropis dengan pantai, panorama alam, dan pengalaman budaya Bali.</p>
+              <div class="package-meta"><span>3 Hari 2 Malam</span><span>Private / Group</span></div>
+              <div class="package-bottom">
+                <div><span class="price-label">Contoh harga mulai</span><span class="price">Rp1.850.000</span></div>
+                <button class="btn btn-outline btn-small book-package" data-package="Bali Serenity Escape">Pilih ↗</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="package-card" data-category="pantai">
+            <div class="package-image">
+              <img src="https://images.unsplash.com/photo-1516690561799-46d8f74f9abf?auto=format&fit=crop&w=850&q=85"
+                   alt="Petualangan pulau Indonesia" loading="lazy">
+              <span class="package-tag">Ocean Adventure</span>
+            </div>
+            <div class="package-body">
+              <div class="package-location">Labuan Bajo, NTT</div>
+              <h3>Komodo Island Journey</h3>
+              <p>Jelajahi panorama kepulauan, laut biru, dan petualangan alam yang berkesan.</p>
+              <div class="package-meta"><span>3 Hari 2 Malam</span><span>Island Trip</span></div>
+              <div class="package-bottom">
+                <div><span class="price-label">Contoh harga mulai</span><span class="price">Rp2.750.000</span></div>
+                <button class="btn btn-outline btn-small book-package" data-package="Komodo Island Journey">Pilih ↗</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="package-card" data-category="budaya">
+            <div class="package-image">
+              <img src="https://images.unsplash.com/photo-1596402184320-417e7178b2cd?auto=format&fit=crop&w=850&q=85"
+                   alt="Perjalanan budaya di Indonesia" loading="lazy">
+              <span class="package-tag">Culture & Heritage</span>
+            </div>
+            <div class="package-body">
+              <div class="package-location">Yogyakarta, DIY</div>
+              <h3>Java Heritage Escape</h3>
+              <p>Temukan pesona budaya, kuliner lokal, dan tempat bersejarah dalam satu perjalanan.</p>
+              <div class="package-meta"><span>3 Hari 2 Malam</span><span>Culture Trip</span></div>
+              <div class="package-bottom">
+                <div><span class="price-label">Contoh harga mulai</span><span class="price">Rp1.250.000</span></div>
+                <button class="btn btn-outline btn-small book-package" data-package="Java Heritage Escape">Pilih ↗</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="package-card" data-category="alam">
+            <div class="package-image">
+              <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=850&q=85"
+                   alt="Pegunungan dan pemandangan alam" loading="lazy">
+              <span class="package-tag">Nature Escape</span>
+            </div>
+            <div class="package-body">
+              <div class="package-location">Jawa Barat</div>
+              <h3>Highland Retreat</h3>
+              <p>Luangkan waktu untuk menikmati udara sejuk, pemandangan pegunungan, dan suasana alam.</p>
+              <div class="package-meta"><span>2 Hari 1 Malam</span><span>Nature Trip</span></div>
+              <div class="package-bottom">
+                <div><span class="price-label">Contoh harga mulai</span><span class="price">Rp850.000</span></div>
+                <button class="btn btn-outline btn-small book-package" data-package="Highland Retreat">Pilih ↗</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="package-card" data-category="alam">
+            <div class="package-image">
+              <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=850&q=85"
+                   alt="Lanskap pegunungan untuk petualangan" loading="lazy">
+              <span class="package-tag">Adventure</span>
+            </div>
+            <div class="package-body">
+              <div class="package-location">Destinasi pilihan</div>
+              <h3>Mountain Adventure</h3>
+              <p>Inspirasi perjalanan alam untuk pencinta lanskap pegunungan dan pengalaman outdoor.</p>
+              <div class="package-meta"><span>2 Hari 1 Malam</span><span>Adventure Trip</span></div>
+              <div class="package-bottom">
+                <div><span class="price-label">Contoh harga mulai</span><span class="price">Rp950.000</span></div>
+                <button class="btn btn-outline btn-small book-package" data-package="Mountain Adventure">Pilih ↗</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="package-card" data-category="pantai">
+            <div class="package-image">
+              <img src="https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=850&q=85"
+                   alt="Resor dan pemandangan pantai" loading="lazy">
+              <span class="package-tag">Private Escape</span>
+            </div>
+            <div class="package-body">
+              <div class="package-location">Custom Destination</div>
+              <h3>Private Luxury Escape</h3>
+              <p>Rancang perjalanan personal berdasarkan destinasi, kebutuhan, dan preferensi Anda.</p>
+              <div class="package-meta"><span>Jadwal Fleksibel</span><span>Custom Trip</span></div>
+              <div class="package-bottom">
+                <div><span class="price-label">Harga berdasarkan kebutuhan</span><span class="price">Custom</span></div>
+                <button class="btn btn-outline btn-small book-package" data-package="Private Luxury Escape">Pilih ↗</button>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <p class="form-note" style="margin-top:25px">
+          * Nama paket, harga, durasi, fasilitas, ketersediaan, dan destinasi harus
+          dikonfirmasi oleh pengelola. Foto hanya ilustrasi. Tidak ada harga yang
+          dijamin sebelum konfirmasi resmi.
+        </p>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" id="tentang">
+      <div class="container about-grid">
+        <div class="about-visual">
+          <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1000&q=85"
+               alt="Pemandangan danau dan pegunungan sebagai inspirasi perjalanan" loading="lazy">
+          <div class="about-frame"></div>
+        </div>
+
+        <div class="about-copy">
+          <span class="eyebrow">The Sagara Philosophy</span>
+          <h2>Bukan Sekadar Pergi. <span class="gold">Ciptakan Cerita.</span></h2>
+          <p>
+            SAGARA TRAVEL hadir sebagai identitas perjalanan yang mengutamakan
+            inspirasi, kenyamanan, dan pengalaman personal.
+          </p>
+          <p>
+            Kami ingin membantu Anda menemukan pilihan perjalanan yang sesuai
+            dengan tujuan, waktu, dan anggaran. Mulai dari liburan keluarga,
+            perjalanan bersama teman, hingga rencana private trip.
+          </p>
+
+          <div class="about-points">
+            <div class="about-point">
+              <strong>Personal</strong>
+              <span>Rencana sesuai kebutuhan</span>
+            </div>
+            <div class="about-point">
+              <strong>Flexible</strong>
+              <span>Pilihan perjalanan beragam</span>
+            </div>
+            <div class="about-point">
+              <strong>Curated</strong>
+              <span>Inspirasi destinasi pilihan</span>
+            </div>
+            <div class="about-point">
+              <strong>Memorable</strong>
+              <span>Cerita di setiap perjalanan</span>
+            </div>
+          </div>
+
+          <a href="#booking" class="btn btn-gold">Mulai Rencanakan ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CALL TO ACTION -->
+    <section class="experience">
+      <div class="container">
+        <span class="eyebrow">Your Next Chapter</span>
+        <h2>Dunia Terlalu Indah untuk Tidak <span class="gold">Dijelajahi.</span></h2>
+        <p>
+          Ceritakan perjalanan impian Anda. Mari mulai menyusun rencana
+          yang sesuai dengan kebutuhan dan anggaran Anda.
+        </p>
+        <a href="#booking" class="btn btn-gold">Rencanakan Perjalanan ↗</a>
+      </div>
+    </section>
+
+    <!-- CONTACT & BOOKING -->
+    <section class="section booking-section" id="booking">
+      <div class="container booking-grid">
+        <div class="booking-copy" id="kontak">
+          <span class="eyebrow">Let's Plan Together</span>
+          <h2>Perjalanan Anda Dimulai <span class="gold">di Sini.</span></h2>
+          <p>
+            Isi formulir untuk menyampaikan rencana perjalanan Anda.
+            Detail akan disiapkan sebagai pesan email atau WhatsApp agar
+            bisa diteruskan kepada pengelola untuk ditindaklanjuti.
+          </p>
+
+          <div class="contact-line">
+            <small>Email</small>
+            <a href="mailto:sagaratravel@gmail.com">sagaratravel@gmail.com</a>
+          </div>
+          <div class="contact-line">
+            <small>Lokasi</small>
+            <span>Jakarta Selatan, DKI Jakarta, Indonesia</span>
+          </div>
+          <div class="contact-line">
+            <small>Jam Layanan</small>
+            <span>Silakan hubungi kami melalui email untuk informasi layanan.</span>
+          </div>
+          <a class="btn btn-outline btn-small" style="margin-top:22px"
+             href="https://www.google.com/maps/search/?api=1&query=Jakarta+Selatan+DKI+Jakarta"
+             target="_blank" rel="noopener noreferrer">Lihat Area Jakarta Selatan ↗</a>
+        </div>
+
+        <form class="booking-form" id="bookingForm">
+          <h3>Plan Your Journey</h3>
+          <p class="form-intro">Ceritakan kebutuhan perjalanan Anda di bawah ini.</p>
+
+          <div class="form-grid">
+            <div class="field">
+              <label for="customerName">Nama lengkap *</label>
+              <input id="customerName" name="customerName" type="text" placeholder="Nama Anda" autocomplete="name" required maxlength="100">
+            </div>
+
+            <div class="field">
+              <label for="customerContact">Nomor HP / WhatsApp *</label>
+              <input id="customerContact" name="customerContact" type="tel" placeholder="Nomor yang bisa dihubungi" autocomplete="tel" required maxlength="30">
+            </div>
+
+            <div class="field full">
+              <label for="customerEmail">Email (opsional)</label>
+              <input id="customerEmail" name="customerEmail" type="email" placeholder="nama@email.com" autocomplete="email" maxlength="150">
+            </div>
+
+            <div class="field full">
+              <label for="selectedPackage">Paket perjalanan *</label>
+              <select id="selectedPackage" name="selectedPackage" required>
+                <option value="">Pilih paket perjalanan</option>
+                <option>Bali Serenity Escape</option>
+                <option>Komodo Island Journey</option>
+                <option>Java Heritage Escape</option>
+                <option>Highland Retreat</option>
+                <option>Mountain Adventure</option>
+                <option>Private Luxury Escape</option>
+                <option>Perjalanan Custom / Lainnya</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="travelDate">Tanggal keberangkatan *</label>
+              <input id="travelDate" name="travelDate" type="date" required>
+            </div>
+
+            <div class="field">
+              <label for="travelers">Jumlah peserta *</label>
+              <select id="travelers" name="travelers" required>
+                <option value="">Pilih jumlah</option>
+                <option>1 orang</option>
+                <option>2 orang</option>
+                <option>3–5 orang</option>
+                <option>6–10 orang</option>
+                <option>11–20 orang</option>
+                <option>Lebih dari 20 orang</option>
+              </select>
+            </div>
+
+            <div class="field full">
+              <label for="budget">Anggaran per orang</label>
+              <select id="budget" name="budget">
+                <option value="Belum ditentukan">Belum ditentukan</option>
+                <option>Di bawah Rp1.000.000</option>
+                <option>Rp1.000.000–Rp2.500.000</option>
+                <option>Rp2.500.000–Rp5.000.000</option>
+                <option>Di atas Rp5.000.000</option>
+              </select>
+            </div>
+
+            <div class="field full">
+              <label for="travelNotes">Catatan perjalanan</label>
+              <textarea id="travelNotes" name="travelNotes" placeholder="Destinasi, kebutuhan transportasi, penginapan, atau permintaan khusus..." maxlength="1500"></textarea>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-gold form-submit">Kirim Permintaan Perjalanan ↗</button>
+          <p class="form-note">
+            Formulir ini menyiapkan pesan untuk dikirim melalui aplikasi email
+            atau WhatsApp. Pengiriman dan konfirmasi belum otomatis tersimpan
+            di server.
+          </p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a class="brand" href="#home">
+            <div class="brand-mark"><span>S</span></div>
+            <div>
+              <div class="brand-name">SAGARA</div>
+              <span class="brand-sub">TRAVEL & JOURNEYS</span>
+            </div>
+          </a>
+          <p>
+            Luxury Journeys, Unforgettable Memories.
+            Temukan inspirasi perjalanan dan rancang pengalaman Anda
+            bersama SAGARA TRAVEL.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <a href="#destinasi">Destinasi</a>
+          <a href="#paket">Paket Wisata</a>
+          <a href="#tentang">Tentang Kami</a>
+          <a href="#booking">Rencanakan Trip</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Hubungi Kami</h4>
+          <a href="mailto:sagaratravel@gmail.com">sagaratravel@gmail.com</a>
+          <p>Jakarta Selatan, DKI Jakarta</p>
+          <a href="https://www.google.com/maps/search/?api=1&query=Jakarta+Selatan+DKI+Jakarta"
+             target="_blank" rel="noopener noreferrer">Lokasi area ↗</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span id="currentYear"></span> SAGARA TRAVEL. All rights reserved.</span>
+        <span>CRAFTED FOR EXTRAORDINARY JOURNEYS.</span>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-top" id="backTop" aria-label="Kembali ke atas">↑</button>
+
+  <script>
+    /* ==========================================
+       SAGARA TRAVEL CONFIGURATION
+       Masukkan nomor WhatsApp admin di sini
+       Contoh: "6281234567890"
+       Kosongkan jika belum memiliki nomor.
+    ========================================== */
+    const WHATSAPP_NUMBER = "";
+
+    const BUSINESS_EMAIL = "sagaratravel@gmail.com";
+
+    // Mobile navigation
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.setAttribute("aria-label", isOpen ? "Tutup menu" : "Buka menu");
+      menuToggle.textContent = isOpen ? "✕" : "☰";
+    });
+
+    navLinks.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Buka menu");
+        menuToggle.textContent = "☰";
+      });
+    });
+
+    // Destination package filters
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const packageCards = document.querySelectorAll(".package-card");
+
+    filterButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        const filter = button.dataset.filter;
+
+        filterButtons.forEach(item => {
+          const active = item === button;
+          item.classList.toggle("active", active);
+          item.setAttribute("aria-pressed", String(active));
+        });
+
+        packageCards.forEach(card => {
+          card.hidden = filter !== "all" && card.dataset.category !== filter;
+        });
+      });
+    });
+
+    // Prefill booking package when clicking a package card
+    const selectedPackage = document.getElementById("selectedPackage");
+
+    document.querySelectorAll(".book-package").forEach(button => {
+      button.addEventListener("click", () => {
+        const packageName = button.dataset.package;
+        const optionExists = Array.from(selectedPackage.options)
+          .some(option => option.value === packageName);
+
+        if (optionExists) {
+          selectedPackage.value = packageName;
+        } else {
+          selectedPackage.value = "Perjalanan Custom / Lainnya";
+          document.getElementById("travelNotes").value =
+            "Paket yang diminati: " + packageName;
+        }
+
+        document.getElementById("booking").scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+      });
+    });
+
+    // Do not allow selecting a date in the past
+    const travelDate = document.getElementById("travelDate");
+    const now = new Date();
+    const localToday = [
+      now.getFullYear(),
+      String(now.getMonth() + 1).padStart(2, "0"),
+      String(now.getDate()).padStart(2, "0")
+    ].join("-");
+
+    travelDate.min = localToday;
+
+    // Booking: open WhatsApp if configured, otherwise prepare an email
+    document.getElementById("bookingForm").addEventListener("submit", event => {
+      event.preventDefault();
+
+      const form = event.currentTarget;
+
+      if (!form.reportValidity()) return;
+
+      const data = new FormData(form);
+      const get = key => String(data.get(key) || "").trim();
+
+      const message = [
+        "PERMINTAAN PERJALANAN — SAGARA TRAVEL",
+        "",
+        "Nama: " + get("customerName"),
+        "Nomor HP / WhatsApp: " + get("customerContact"),
+        "Email: " + (get("customerEmail") || "-"),
+        "Paket: " + get("selectedPackage"),
+        "Tanggal keberangkatan: " + get("travelDate"),
+        "Jumlah peserta: " + get("travelers"),
+        "Anggaran per orang: " + get("budget"),
+        "Catatan: " + (get("travelNotes") || "-"),
+        "",
+        "Mohon informasi ketersediaan, fasilitas, dan harga resmi paket.",
+        "Terima kasih."
+      ].join("\n");
+
+      // Prevent malformed WhatsApp URLs by accepting digits only
+      const phone = String(WHATSAPP_NUMBER).replace(/\D/g, "");
+
+      if (phone.length >= 8 && phone.length <= 15) {
+        const url = "https://wa.me/" + phone +
+          "?text=" + encodeURIComponent(message);
+
+        window.open(url, "_blank", "noopener,noreferrer");
+      } else {
+        const subject = "Permintaan Perjalanan - SAGARA TRAVEL";
+        const mailto = "mailto:" + BUSINESS_EMAIL +
+          "?subject=" + encodeURIComponent(subject) +
+          "&body=" + encodeURIComponent(message);
+
+        window.location.href = mailto;
+      }
+    });
+
+    // Back to top
+    const backTop = document.getElementById("backTop");
+
+    window.addEventListener("scroll", () => {
+      backTop.classList.toggle("visible", window.scrollY > 500);
+    }, { passive: true });
+
+    backTop.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    // Footer year
+    document.getElementById("currentYear").textContent =
+      new Date().getFullYear();
+  </script>
+</body>
+</html>
